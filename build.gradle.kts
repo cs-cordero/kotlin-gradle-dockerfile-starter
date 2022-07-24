@@ -55,13 +55,10 @@ tasks.startScripts { dependsOn(tasks.shadowJar) }
 tasks.create("buildImage", DockerBuildImage::class) {
     dependsOn(tasks.build)
 
-    buildArgs.set(mapOf("shadowJarFileName" to shadowJarFileName))
+    buildArgs.set(mapOf("SHADOW_JAR_FILE_NAME" to shadowJarFileName))
 
     // defines the docker build context
     inputDir.set(project.projectDir)
-
-    // remove intermediate containers after a successful build.
-    remove.set(true)
 
     val imageRepository = project.properties["imageRepository"]!!
     val imageName = project.properties["imageName"] ?: project.name
