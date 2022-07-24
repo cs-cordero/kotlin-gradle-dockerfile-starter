@@ -1,5 +1,7 @@
 # A Starter Template for Kotlin-Gradle-Dockerfile setups
 
+There's a [branch of this that also sets you up with Selenium, Chrome and Chromedriver](https://github.com/cs-cordero/kotlin-gradle-dockerfile-starter/tree/selenium) in the Docker image!
+
 ## Setup
 
 ```shell
